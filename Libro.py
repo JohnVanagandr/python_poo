@@ -9,3 +9,9 @@ class Libro:
 
   def informacion(self):
     print(f'Autor: {self.autor} Titulo: {self.titulo} Precio: {self.precio} Existencias: {self.existencias} Id: {self.id}')
+
+  def valor(self):
+    print(f'El valor de {self.titulo} es: {self.precio}')
+
+  def cantidad(self):
+    print(f'La cantidad en existencia de {self.titulo} es: {self.existencias}')
