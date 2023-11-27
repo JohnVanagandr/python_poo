@@ -60,14 +60,14 @@ class ShopingCart {
     console.log("Cart: ", this.products);
   }
 
-  calcTotal() {
+  total() {
     return this.products
       .map((price) => price)
       .reduce((ac, price) => ac + price, 0);
   }
 
-  printTicket() {
-    console.log(`Total a pagar: ${this.calcTotal()}`);
+  ticket() {
+    console.log(`Total a pagar: ${this.total()}`);
   }
 }
 
@@ -87,4 +87,4 @@ cart.addProduct(1, book1.price);
 cart.addProduct(1, book2.price);
 
 cart.showProducts();
-cart.printTicket();
+cart.ticket();
