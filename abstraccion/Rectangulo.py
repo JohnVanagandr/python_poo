@@ -9,7 +9,7 @@ class Rectangulo(Base):
     self.altura = altura
 
   def perimetro(self):
-    return (self.base * self.altura) * 2
+    return (self.base + self.altura) * 2
   
   def area(self):
     return self.base * self.altura
