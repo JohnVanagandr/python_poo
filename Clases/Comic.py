@@ -5,5 +5,6 @@ class Comic(Book):
     self.ilustrators = ilustrators
     super().__init__(title, author, price)
   
-  
+  def add_ilistrator(self, new_ilustrator):
+    self.ilustrators.append(new_ilustrator)
     

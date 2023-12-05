@@ -17,7 +17,7 @@ class Book:
     self.__title = newAuthor
 
   def getPrice(self):
-    return f"El precio es:{self.__price}"
+    return self.__price
   
   def setTitle(self, newPrice):
     self.__title = newPrice
