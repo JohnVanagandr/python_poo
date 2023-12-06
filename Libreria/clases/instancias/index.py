@@ -1,8 +1,8 @@
-import sys, os
-sys.path.insert(0, os.getcwd())
-#from Libreria.clases.Carrito import Carrito
-from instancias.instancia import *
-from clases.Carrito import Carrito
+from sys import path
+from os import getcwd
+path.insert(0, getcwd())
+from instancia import *
+from Carrito import Carrito
 print('Libros disponibles:\n')
 Libro.get_books()
 #Imprime la informacion de todos los libros que estan actualmente.
@@ -75,6 +75,8 @@ while True:
           print('No hay un libro con ese código.\n')
       except ValueError:
         print('Se debe ingresar un valor entero.')
+      except KeyError:
+        print('El código no es válido.')
   elif e1.upper() == 'N':
     print('Programa finalizado.')
     break

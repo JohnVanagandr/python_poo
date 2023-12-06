@@ -19,9 +19,9 @@ def consulta(query=''):
   conn.close()#Cerrar la coneccion.
   return data
 '''
-import sys
-sys.path.insert(0, '/d/2772895/python_poo/Libreria/clases/Carrito/')
-from clases.Carrito import Libro, Comic
+#import sys
+#sys.path.insert(0, 'Libreria/clases/Carrito/')
+from Carrito import Libro, Comic
 #instancias de los libros con su informacion
 l1 = Libro('George R.R. Martin', 'Cancion de Hielo y Fuego', 60000, 7, 1001)
 l2 = Libro('Gabriel Garcia Marquez', 'Cien Años de Soledad', 50000, 12, 1002)

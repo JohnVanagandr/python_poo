@@ -1,6 +1,6 @@
-import sys, os
-sys.path.insert(0, os.getcwd())
-from Libreria.clases.Libro import Libro
+#import sys, os
+#sys.path.insert(0, os.getcwd())
+from Libro import Libro
 class Comic(Libro):
   def __init__(self, a, t, p, e, i, il):
     super().__init__(a, t, p, e, i)

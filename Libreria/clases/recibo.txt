@@ -1,0 +1,12 @@
+Libros comprados:
+
+Titulo: Trazo de Tiza
+Valor total: $100000
+
+Titulo: El amor en los tiempos del colera
+Valor total: $200000
+
+Titulo: Cien Años de Soledad
+Valor total: $50000
+
+Total a pagar: $350000

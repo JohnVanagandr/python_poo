@@ -1,6 +1,6 @@
-import sys, os
-sys.path.insert(0, os.getcwd())
-from clases.Comic import Libro, Comic
+#import sys, os
+#sys.path.insert(0, os.getcwd())
+from Comic import Libro, Comic
 class Carrito:
   '''Clase "Carrito de compras". Agrega o quita las compras.\n
   Muestra los productos agregados e imprime el valor total.'''
