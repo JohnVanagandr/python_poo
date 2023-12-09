@@ -1,15 +1,31 @@
-from .book import Book #traemos los metodos de laclase book
+from clases.book import Book; #importa la clase Book del archivo books
 
-class Comic(Book): #creamos la clase comic Hereda de book
-    #creamos el metodo constructor 
-    #inicializa una clase
-    def __init__(self,title, author, price, ilustrators):
-        #inicializamos los atributos
-        self.ilustrators=ilustrators
-        #llamamos la superclase Book y enviamos los parametros
-        Book().__init__(title, author, price)
+class Comic(Book):
+    def __init__(self, title, author, price, illustrators):
+        """
+        Constructor de la clase Comic, que hereda de la clase Book.
 
-    #creamos el metodo
-    def addIlustrator(self,newIlustrators):
-        #agregar nuevo ilustrador
-        self.ilustrators.append(newIlustrators)
+        Parámetros:
+        title (str): Título del cómic.
+        author (str): Autor del cómic.
+        price (float): Precio del cómic.
+        illustrators (list): Lista de ilustradores del cómic.
+        """
+        super().__init__(title, author, price)
+        self.illustrators = illustrators
+
+    def add_illustrator(self, new_illustrator):
+        """
+        Método para agregar un nuevo ilustrador a la lista de ilustradores del cómic.
+
+        Parámetros:
+        new_illustrator (str): Nuevo ilustrador a agregar.
+        """
+        self.illustrators.append(new_illustrator)
+
+    def get_all_data(self):
+        """
+        Método para imprimir todos los datos del libro.
+        Imprime el título, autor y precio del libro.
+        """
+        print(f"\033[3;36mTitulo: {self._title}, Author: {self._author}, Precio: {self._price}, Ilustradores: {self.illustrators}\033[0")  
