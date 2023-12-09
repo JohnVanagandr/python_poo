@@ -1,28 +1,82 @@
 class Book:
-    def __init__(self,title,author,price):
-        self.__title = title
-        self.__author = author
-        self.__price = price
+    def __init__(self, title, author, price):
+        """
+        Constructor de la clase Book.
 
-    def get_title(self):
-        return f"El titulo es: {self.__title}"
-    
-    def set_title(self,new_title):
-        self.__title=new_title  
+        Parámetros:
+        title (str): Título del libro.
+        author (str): Autor del libro.
+        price (float): Precio del libro.
+        """
+        self._title = title
+        self._author = author
+        self._price = price
 
-    def get_author(self):
-        return f"El autor es: {self.__author}"
-    
-    def set_author(self,new_author):
-        self.__author=new_author
+    @property
+    def title(self):
+        """
+        Getter para el título del libro.
 
-    def get_price(self):
-        return f"El precio es: {self.__price}"
+        Retorna:
+        str: Título del libro.
+        """
+        return self._title
 
-    def set_price(self,new_price):
-            self.__price=new_price
+    @title.setter
+    def title(self, new_title):
+        """
+        Setter para actualizar el título del libro.
 
-    def getAllData(self):
-         return f"Titulo: {self.__title}, Autor: {self.__author}, Precio: {self.__price}"
-    
-    
+        Parámetros:
+        new_title (str): Nuevo título del libro.
+        """
+        self._title = new_title
+
+    @property
+    def author(self):
+        """
+        Getter para el autor del libro.
+
+        Retorna:
+        str: Autor del libro.
+        """
+        return self._author
+
+    @author.setter
+    def author(self, new_author):
+        """
+        Setter para actualizar el autor del libro.
+
+        Parámetros:
+        new_author (str): Nuevo autor del libro.
+        """
+        self._author = new_author
+
+    @property
+    def price(self):
+        """
+        Getter para el precio del libro.
+
+        Retorna:
+        float: Precio del libro.
+        """
+        return self._price
+
+    @price.setter
+    def price(self, new_price):
+        """
+        Setter para actualizar el precio del libro.
+
+        Parámetros:
+        new_price (float): Nuevo precio del libro.
+        """
+        self._price = new_price
+
+    def get_all_data(self):
+        """
+        Método para imprimir todos los datos del libro.
+        Imprime el título, autor y precio del libro.
+        """
+        print(f"\033[3;36mTitulo: {self._title}, Author: {self._author}, Precio: {self._price}\033[0")
+
+
