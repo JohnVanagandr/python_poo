@@ -1,5 +1,5 @@
 class ShopingCart ():# creamos la clase
-     #creamos el metodo constructor 
+    #creamos el metodo constructor 
     #inicializa una clase
     def __init__(self):
         #inicializamos un arreglo
@@ -20,5 +20,5 @@ class ShopingCart ():# creamos la clase
 
     #creamos el metodo printTicket
     def printTicket(self):
-        #retornamos el total
-        return f"Total a pagar: {self.calcTotal()} "
+    #retornamos el total
+        return f"Total a pagar: {self.calcTotal()}"
