@@ -1,24 +1,39 @@
-class ShopingCart ():# creamos la clase
-     #creamos el metodo constructor 
-    #inicializa una clase
+class ShopingCart:
     def __init__(self):
-        #inicializamos un arreglo
-        self.products=[] 
-    #creamos el metodo addproduct
-    def addProduct(self,amount, price):
-        #aumentamos el array
-        self.products.extend([price]*amount)
-    #creamos el metodo showproducts
-    def showProducts(self):
-        #retornamos el listado de productos
-        return f"Productos: {self.products}"
-    
-    #creamos el metodo calcTotal
-    def calcTotal(self):
-        #retornamos la suma de productos
+        """
+        Constructor de la clase ShoppingCart.
+
+        Inicializa una lista vacía para almacenar los productos.
+        """
+        self.products = []
+
+    def add_product(self, amount, price):
+        """
+        Método para agregar productos al carrito.
+
+        Parámetros:
+        amount (int): Cantidad de productos a agregar.
+        price (float): Precio unitario del producto a agregar.
+        """
+        self.products.extend([price] * amount)
+
+    def show_products(self):
+        """ 
+        Método para mostrar los productos en el carrito.
+        """
+        print("\033[35mCart: \033[0", self.products)
+
+    def calc_total(self):
+        """
+        Método para calcular el total a pagar por todos los productos en el carrito.
+
+        Retorna:
+        float: Total a pagar por los productos en el carrito.
+        """
         return sum(self.products)
 
-    #creamos el metodo printTicket
-    def printTicket(self):
-        #retornamos el total
-        return f"Total a pagar: {self.calcTotal()} "
+    def print_ticket(self):
+        """
+        Método para imprimir el ticket de compra con el total a pagar.
+        """
+        print(f"\033[35mTotal a pagar: {self.calc_total()}\033[0")
