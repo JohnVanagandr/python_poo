@@ -1,4 +1,16 @@
-from Biblioteca import Biblioteca
+from sys import path
+from os import getcwd
+path.insert(0, getcwd())
+try:
+  from Biblioteca import Biblioteca
+  # Importacion 1 de Biblioteca
+except ImportError:
+  pass
+try:
+  from Libreria.clases.Biblioteca import Biblioteca
+  # Importacion 2 de Biblioteca
+except ImportError:
+  pass
 class Libro(Biblioteca):
   """Contiene los metodos para agregar la info de los libros.\n
   La clave en cada diccionario será el id de cada libro."""

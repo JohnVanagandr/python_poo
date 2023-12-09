@@ -1,4 +1,13 @@
-from Biblioteca import Biblioteca
+try:
+  from Biblioteca import Biblioteca
+  # Importacion 1 de Biblioteca
+except ImportError:
+  pass
+try:
+  from Libreria.clases.Biblioteca import Biblioteca
+  # Importacion 2 de Biblioteca
+except ImportError:
+  pass
 class Comic(Biblioteca):
   """Contiene los metodos para agregar la info de los libros.\n
   La clave en cada diccionario será el id de cada libro."""

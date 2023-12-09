@@ -1,8 +1,14 @@
 from sys import path
 from os import getcwd
 path.append(getcwd())
-from instancia import libros, b, c
-#from Libreria.clases.Carrito import Carrito, Biblioteca
+try:
+  from instancia import libros, biblioteca, carrito
+except ImportError:
+  pass
+try:
+  from Libreria.clases.Carrito import carrito, biblioteca
+except ImportError:
+  pass
 print('Libros disponibles:\n')
 libros()
 fin = False#Rompe los bucles al terminar las comprobaciones.
@@ -16,7 +22,7 @@ while True:
         break
       try:
         cod = int(input('Ingrese el codigo del libro que desea comprar: '))
-        if b.get_value(cod).get_existencias() < 1:
+        if biblioteca.get_value(cod).get_existencias() < 1:
             #Ya no quedan libros con ese codigo en el diccionario.
             print('No hay suficientes existencias de ese libro.\n')
         else:#elif cod in b.get_dic_books():
@@ -26,11 +32,11 @@ while True:
             if cnt <= 0:
               print('La cantidad debe ser mayor a cero.')
             else:
-              if b.get_value(cod).get_existencias() - cnt < 0:
+              if biblioteca.get_value(cod).get_existencias() - cnt < 0:
                 print('No hay suficientes libros para realizar esa compra.\n')
               else:
                 break
-          print(c.add_carrito(cod, cnt))#Agrega la compra.
+          print(carrito.add_carrito(cod, cnt))#Agrega la compra.
           e2 = input('Desea comprar otro libro? y/n: ')
           if e2.upper() != 'Y':
             vacio = False#Confirmacion del carrito vacio.
@@ -40,8 +46,8 @@ while True:
               while True:
                 try:
                   e4 = int(input('Ingrese el codigo del libro: '))
-                  print(c.unset_pdto(e4, cnt))#Elimina la compra.
-                  if len(c.get_carrito()) == 0:
+                  print(carrito.unset_pdto(e4, cnt))#Elimina la compra.
+                  if len(carrito.get_carrito()) == 0:
                     #Verifica si el carrito esta vacio.
                     print('Eliminaste todos los productos del carrito.')
                     vacio = True
@@ -49,7 +55,7 @@ while True:
                   e5 = input('Desea eliminar otro producto? y/n: ')
                   if e5.upper() != 'Y':
                     #Si no desea eliminar eliminar otro producto.
-                    print(c.imprimir_recibo())
+                    print(carrito.imprimir_recibo())
                     print('Programa finalizado.')
                     fin = True
                     break
@@ -65,7 +71,7 @@ while True:
                   break
             elif e3.upper() == 'N':
               #Si no desea eliminar un producto.
-              print(c.imprimir_recibo())
+              print(carrito.imprimir_recibo())
               print('Programa finalizado.')
               fin = True
               break

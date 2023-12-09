@@ -1,4 +1,13 @@
-from Biblioteca import b#, Biblioteca
+try:
+  from Biblioteca import biblioteca
+  # Importacion 1 de b
+except ImportError:
+  pass
+try:
+  from Libreria.clases.Biblioteca import biblioteca
+  # Importacion 2 de b
+except ImportError:
+  pass
 class Carrito:
   '''Clase "Carrito de compras". Agrega o quita las compras.\n
   Muestra los productos agregados e imprime el valor total.'''
@@ -6,14 +15,14 @@ class Carrito:
   """Ejemplo: {1005(id):{Trazo de Tiza(titulo):25000(costo)}} 
   El costo es el producto del precio multiplicado por la cantidad de libros comprados."""
   def __init__(self):
-    pass
+    self.__compra_id = None
   def add_carrito(self, codigo, cantidad):
     '''Agrega la compra al diccionario(carrito).\n
     Modifica las existencias del libro que se agrega.\n
     Retorna un string con la confirmacion.'''
-    titulo = b.get_value(codigo).get_titulo()
+    titulo = biblioteca.get_value(codigo).get_titulo()
     # 'titulo' busca el titulo del libro
-    total = b.get_value(codigo).get_precio() * cantidad
+    total = biblioteca.get_value(codigo).get_precio() * cantidad
     # 'total' busca el precio y calcula el total
     if codigo in self.__carrito:# Si el libro ya ha sido agregado al carrito
       """Esta condicion evita que se creen claves duplicadas."""
@@ -30,7 +39,7 @@ class Carrito:
     """Creamos la clave del diccionario con el id(codigo) del libro
     y le asignamos como valor otro diccionario, lo que crea la anidacion.
     El nuevo diccionario tiene como clave el titulo y como valor el costo(precio*cantidad)"""
-    b.get_value(codigo).set_existencias(cantidad, True)
+    biblioteca.get_value(codigo).set_existencias(cantidad, True)
     # Se modifican las existencias
     return 'Agregado al carrito.\n'
   def unset_pdto(self, codigo, cantidad):
@@ -39,7 +48,7 @@ class Carrito:
     Retorna un string con la confirmacion.'''
     del self.__carrito[codigo]#del -> delete
     #Se elimina del "carrito" la clave(codigo) y con ella su valor(titulo:precio)
-    b.get_value(codigo).set_existencias(cantidad, False)
+    biblioteca.get_value(codigo).set_existencias(cantidad, False)
     # Se modifican las existencias
     return 'Producto eliminado.'
   def mostrar_productos(self):
@@ -82,5 +91,5 @@ class Carrito:
     r.write(c)#escribimos en el archivo la informacion.
     r.close()#cerramos el archivo.
     return 'Se ha impreso el recibo.'
-c = Carrito()
-# 'c' única instancia de 'Carrito' que será utilizada en toda la ejecucion
+carrito = Carrito()
+# 'carrito' única instancia de 'Carrito' que será utilizada en toda la ejecucion

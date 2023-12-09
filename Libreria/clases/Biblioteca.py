@@ -31,5 +31,5 @@ class Biblioteca:
     '''Metodo getter para acceder al diccionario (books).\n
     Retorna el diciconario completo con la informacion de los libros.'''
     return self.__books
-b = Biblioteca()
-# 'b' única instancia de 'Biblioteca' que será utilizada en toda la ejecucion
+biblioteca = Biblioteca()
+# 'biblioteca' única instancia de 'Biblioteca' que será utilizada en toda la ejecucion
