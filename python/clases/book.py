@@ -6,7 +6,7 @@ class Book:
         Parámetros:
         title (str): Título del libro.
         author (str): Autor del libro.
-        price (float): Precio del libro.
+        price (float):aa Precio del libro.
         """
         self._title = title
         self._author = author
