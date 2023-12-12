@@ -1,9 +1,0 @@
-Libros comprados:
-
-Titulo: Cancion de Hielo y Fuego
-Valor total: $120000
-
-Titulo: Cien Años de Soledad
-Valor total: $100000
-
-Total a pagar: $220000

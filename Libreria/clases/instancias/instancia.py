@@ -5,7 +5,6 @@ try:
   from Biblioteca import biblioteca # Importacion 1 de b
   from Libro import Libro # Importacion 1 de Libro
   from Comic import Comic # Importacion 1 de Comic
-#  from Carrito import carrito # Importacion 1 de c
 except ImportError:
   pass
 try:
@@ -27,10 +26,6 @@ def libros():
   l7 = Libro('Frank G. Slaughter', 'En un Jardin Oscuro', 37000, 9)
   #añadimos cada libro al diccionario principal(books)
   biblioteca.add_books([l1, l2, l3, l4, l5, l6, l7])
-  return b.get_books()
+  return biblioteca.get_books()
 def login(name, password):
   pass
-d = {}
-#print(dir(d))
-#print(dir(biblioteca))
-help(d)

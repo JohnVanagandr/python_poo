@@ -1,6 +1,0 @@
-Libros comprados:
-
-Titulo: Cancion de Hielo y Fuego
-Valor total: $180000
-
-Total a pagar: $180000

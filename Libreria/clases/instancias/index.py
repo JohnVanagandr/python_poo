@@ -2,7 +2,8 @@ from sys import path
 from os import getcwd
 path.append(getcwd())
 try:
-  from instancia import libros, biblioteca, carrito
+  from instancia import libros, biblioteca
+  from Carrito import carrito
 except ImportError:
   pass
 try:
